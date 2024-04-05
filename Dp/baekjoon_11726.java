@@ -2,7 +2,7 @@ package Dp;
 
 import java.util.Scanner;
 
-public class tile_11726 {
+public class baekjoon_11726 {
     public static int[] arr;
     public static void main(String[] args) {
         int a = 0;
