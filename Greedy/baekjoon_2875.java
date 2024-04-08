@@ -3,6 +3,8 @@ package Greedy;
 import java.util.Scanner;
 
 public class baekjoon_2875 {
+
+    /* 대회 or 인턴 */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();   // 여학생 수

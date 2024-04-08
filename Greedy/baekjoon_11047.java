@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class baekjoon_11047 {
 
+    /* 동전 0 */
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
