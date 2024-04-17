@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class backjoon_2217 {
+public class baekjoon_2217 {
     /* 로프 */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
