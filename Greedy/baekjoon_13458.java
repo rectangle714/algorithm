@@ -2,7 +2,7 @@ package Greedy;
 
 import java.util.Scanner;
 
-public class baeckjoon_13458 {
+public class baekjoon_13458 {
     /* 시험 감독 */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
