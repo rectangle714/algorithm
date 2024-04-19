@@ -1,21 +1,31 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static int[] arr;
     public static void main(String[] args) {
-        int a = 0;
-        int total = 0;
-        Scanner inputA = new Scanner(System.in);
-        int num = inputA.nextInt();
-        arr = new int[num + 1];
-        System.out.println(dp(num) % 100007);
-    }
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        List<Integer> list = new ArrayList<Integer>();
 
-    private static int dp(int input) {
-        if(input == 1) { return 1; }
-        if(input == 2 ) { return 2; }
-        if(arr[input] != 0) { return arr[input]; }
-        arr[input] = (dp(input - 1) + dp(input - 2)) % 10007;
-        return arr[input];
+        int result = 0;
+        if(list.size() == 1) {
+            result = list.get(0);
+        } else {
+            for(int i=0; i<N; i++) {
+                list.add(sc.nextInt());
+            }
+
+            Collections.sort(list);
+
+            for(int i =0; i<list.size(); i++) {
+                if(i == list.size()-1) {
+                    result += list.get(i);
+                } else {
+                    result += Math.max(list.get(i) * list.get(i+1), list.get(i) + list.get(i+1));
+                    i++;
+                }
+            }
+        }
+
+        System.out.println(result);
     }
 }
