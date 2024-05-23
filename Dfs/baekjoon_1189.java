@@ -30,7 +30,7 @@ public class baekjoon_1189 {
             }
         }
 
-        dfs(R-1, 0, K);
+        dfs(R-1, 0, 1);
         System.out.println(result);
     }
 
