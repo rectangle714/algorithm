@@ -13,8 +13,10 @@ public class baekjoon_10610 {
 
         int total = 0;
         for(int i=0; i<arr.length; i++){
-            total += N.charAt(i);
+            total += Integer.parseInt(N.substring(i,i+1));
         }
+
+        // 30의 배수는 0을 포함하기 때문에 0을 포함하지 않으면 -1
         if(!N.contains("0") || total % 3 != 0) {
             System.out.println("-1");
             return;
