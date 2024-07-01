@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 public class baekjoon_14888 {
     static int N;
     static int[] number;
-    static int[] operator = new int[4];
+    static int[] operator = new int[10];
     static int MAX = Integer.MIN_VALUE;
     static int MIN = Integer.MAX_VALUE;
 
@@ -45,7 +45,7 @@ public class baekjoon_14888 {
             return;
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < N; i++) {
             // 연산자 개수가 1개 이상인 경우
             if (operator[i] > 0) {
 
