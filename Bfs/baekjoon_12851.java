@@ -3,9 +3,7 @@ package Bfs;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /* 숨바꼭질 2 */
 public class baekjoon_12851 {
@@ -34,29 +32,26 @@ public class baekjoon_12851 {
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.offer(idx);
         visited[idx] = 1;
+
         while(!queue.isEmpty()) {
-            int queueVal = queue.poll();
+            int current = queue.poll();
 
-            if(result < visited[queueVal]) return;
-
-            for(int i=0; i<3; i++) {
-                int next = 0;
-                if(i == 0) { next = queueVal + 1; }
-                if(i == 1) { next = queueVal - 1; }
-                if(i == 2) { next = queueVal * 2; }
-
-                if(next < 0 || next > 100000) {
-                    continue;
-                }
-
-                if(next == k) {
-                    result = visited[queueVal];
+            if (current == k) {
+                if (result > visited[current]) {
+                    result = visited[current];
+                    count = 1;
+                } else if (result == visited[current]) {
                     count++;
                 }
+                continue;
+            }
 
-                if (next >= 0 && next < visited.length && visited[next] == 0) {
-                    queue.offer(next);
-                    visited[next] = visited[queueVal] + 1;
+            for (int next : new int[]{current - 1, current + 1, current * 2}) {
+                if (next >= 0 && next <= 100000) {
+                    if (visited[next] == 0 || visited[next] >= visited[current] + 1) {
+                        visited[next] = visited[current] + 1;
+                        queue.offer(next);
+                    }
                 }
             }
         }
