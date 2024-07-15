@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* N과 M (1) */
+/* N과 M (1) (백트래킹)*/
+/* O(n^m) */
 public class baekjoon_15649 {
     static int n, m;
     static boolean[] visited;

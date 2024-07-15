@@ -4,7 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/* 피보나치 수 5 */
+/* 피보나치 수 5 (재귀) */
+/* 시간복잡도 O(n^m) */
 public class baekjoon_10870 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

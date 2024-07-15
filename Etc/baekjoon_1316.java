@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /* 그룹 단어 체커 */
+/* 시간복잡도 O(n*m^2) */
 public class baekjoon_1316 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

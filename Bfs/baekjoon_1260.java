@@ -1,6 +1,5 @@
 package Bfs;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,10 +8,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/* DFS와 BFS */
+/* 시간복잡도 O(n^2) */
 public class baekjoon_1260 {
-
-    /* DFS와 BFS */
-
     static int N, M, V;
     static boolean[] visited;
     static int[][] arr;
@@ -41,7 +39,6 @@ public class baekjoon_1260 {
         Arrays.fill(visited, false);
         bfs(V);
         System.out.println(sb.toString());
-
     }
 
     public static void dfs(int V) {

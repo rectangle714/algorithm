@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* 블랙잭 */
+/* 블랙잭 (브루트포스)*/
+/* 시간복잡도 O(n^3) */
 public class baekjoon_2798 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
