@@ -17,7 +17,7 @@ public class pgm_68645_2 {
         int index = 1;
         int totalNum = n * (n + 1) / 2;
 
-        /* 아래, 오른쪽, 오른쪽 정의 */
+        /* 아래, 오른쪽, 위 왼쪽 정의 */
         final int[] dx = {0, 1, -1};
         final int[] dy = {1, 0, -1};
 
