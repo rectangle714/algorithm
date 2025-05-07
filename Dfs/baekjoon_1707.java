@@ -8,6 +8,9 @@ import java.util.List;
 
 /**
  * 이분 그래프
+ * 기본 graph 값을 0으로 해두고 1의 값에서 한번, 그리고 -1의 값에서 한번 이분 그래프인지 확인을 하고
+ * 이분 그래프가 아니라면 dfs 메소드에서 false를 return하여 "NO"를 출력하고 반대의 경우 "YES"를 출력한다.
+ * 인접 행렬로 구현하게 되면 n*n으로 크기가 할당되어 메모리 초과가 발생하기 때문에 인접 리스트로 구현해야한다.
  */
 public class baekjoon_1707 {
     static List<Integer>[] graph;
@@ -43,7 +46,7 @@ public class baekjoon_1707 {
             boolean isBipartite = true;
             for(int i=1; i<=V; i++) {
                 if(visited[i] == 0) {
-                    if(!dfs(i, 1)) {
+                    if(dfs(i, 1)) {
                         isBipartite = false;
                         break;
                     }
@@ -61,13 +64,13 @@ public class baekjoon_1707 {
 
         for(int val : graph[node]) {
             if(visited[val] == 0) {
-                if(!dfs(val, -color)) return false;
+                if(dfs(val, -color)) return true;
             } else if(visited[val] == color) {
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
 
