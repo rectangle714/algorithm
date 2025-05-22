@@ -1,4 +1,4 @@
-package Etc;
+package 재귀;
 
 import java.util.ArrayList;
 import java.util.Arrays;
