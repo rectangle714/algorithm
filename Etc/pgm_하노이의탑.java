@@ -1,48 +1,37 @@
 package Etc;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class pgm_하노이의탑 {
     public static void main(String[] args) {
-        int n = 2;
-        System.out.println(Arrays.toString(solution(n)));
+        int n = 3;
+        System.out.println(Arrays.deepToString(solution(n)));
     }
 
-    static int[][] answer = {};
+
+    static List<int[]> list = new ArrayList<>();
     public static int[][] solution(int n) {
-        answer = new int[n + n - 1][2];
-        if(n == 1) return new int[][]{{1,3}};
-        recursion(n - 1, 2);
-        answer[count + 1][0] = 1;
-        answer[count + 1][1] = 3;
-        recursion(count, 3);
+        move(n, 1, 3, 2);
+        int[][] answer = new int[list.size()][2];
+        for(int i=0; i<list.size(); i++){
+            answer[i][0] = list.get(i)[0];
+            answer[i][1] = list.get(i)[1];
+        }
 
         return answer;
     }
 
-    static int count = 0;
-    public static void recursion(int n, int move) {
-        int x = 0;
-        int y = 0;
-
-        if(move == 2) {
-            x = 1;
-            y = 2;
-        } else if(move == 3) {
-            x = 2;
-            y = 3;
+    public static void move(int n, int from, int to, int via) {
+        if(n == 1) {
+            list.add(new int[]{from, to});
+            return;
         }
 
-        for(int i = count++; i < n; i++) {
-            for(int j = 0; j < 2; j++) {
-                if(j == 0) {
-                    answer[i][j] = x;
-                } else {
-                    answer[i][j] = y;
-                }
-            }
-        }
-
+        move(n - 1, from, via, to);
+        list.add(new int[]{from, to});
+        move(n - 1, via, to, from);
     }
 
 }
