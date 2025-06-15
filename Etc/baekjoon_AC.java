@@ -18,13 +18,6 @@ public class baekjoon_AC {
                     .mapToInt(Integer::parseInt)
                     .toArray();
 
-            for(int i = 0; i < p.length(); i++) {
-
-                if() {
-
-                }
-
-            }
         }
     }
 }
