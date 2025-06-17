@@ -1,4 +1,4 @@
-package 백준;
+package 백준.쉬운계단수;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

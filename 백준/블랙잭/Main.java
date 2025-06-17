@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 /* 블랙잭 (브루트포스)*/
 /* 시간복잡도 O(n^3) */
-public class baekjoon_2798 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());

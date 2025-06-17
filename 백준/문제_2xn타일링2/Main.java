@@ -1,8 +1,8 @@
-package 백준;
+package 백준.문제_2xn타일링2;
 
 import java.util.Scanner;
 
-public class baekjoon_11726 {
+public class Main {
     public static int[] arr;
     public static void main(String[] args) {
         int a = 0;

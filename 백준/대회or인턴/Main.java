@@ -2,7 +2,7 @@ package 백준.대회or인턴;
 
 import java.util.Scanner;
 
-public class baekjoon_2875 {
+public class Main {
 
     /* 대회 or 인턴 */
     public static void main(String[] args) {
