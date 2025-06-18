@@ -1,11 +1,12 @@
-package 백준.N과M1;
+package Etc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* N과 M (1) */
+/* N과 M (1) (백트래킹)*/
+/* O(n^m) */
 public class Main {
     static int n, m;
     static boolean[] visited;
@@ -19,8 +20,8 @@ public class Main {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        arr = new int[m];
         visited = new boolean[n];
+        arr = new int[m];
 
         dfs(0);
         System.out.println(sb);
@@ -45,3 +46,4 @@ public class Main {
         }
     }
 }
+
