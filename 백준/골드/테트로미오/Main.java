@@ -30,14 +30,15 @@ public class Main {
 
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < M; j++) {
-                visited[i][j] = true;
                 dfs(i, j, 1, arr[i][j]);
+                checkOther(i,j);
             }
         }
 
         System.out.println(maxVal);
     }
 
+    // DFS로 depth 4까지 이동해서 큰값 구하기
     public static void dfs(int x, int y, int depth, int sum) {
         if(depth == 4) {
             maxVal = Math.max(maxVal, sum);
@@ -59,10 +60,28 @@ public class Main {
     }
 
     // 'ㅓ','ㅏ','ㅗ','ㅜ' 모양 탐색
-    public static int checkOther(int x, int y) {
-        int max = arr[x][y];
+    public static void checkOther(int x, int y) {
+        int sum = arr[x][y];
+        int min = Integer.MAX_VALUE;
+        int wings = 0;
+
+        for(int i = 0; i < 4; i++) {
+            int dx = x + moveX[i];
+            int dy = y + moveY[i];
+
+            if(0 <= dx && dx < N && 0 <= dy && dy < M) {
+                wings++;
+                sum += arr[dx][dy];
+                min = Math.min(min, arr[dx][dy]);
+            }
+        }
+
+        // 4방향 모두 더했을 때()는 가장 작은 값을 sum에서 빼주면 됨
+        if(wings == 4) {
+            sum -= min;
+        }
 
 
-        return max;
+        maxVal = Math.max(maxVal, sum);
     }
 }
